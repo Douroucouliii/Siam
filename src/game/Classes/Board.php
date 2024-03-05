@@ -45,6 +45,10 @@ class Board {
     public function removePiece($x, $y) {
         $this->grid[$x][$y] = null;
     }
+
+    public function getPieceAtPosition($x, $y){
+        return $this->grid[$x][$y];
+    }
 }
 
 

@@ -21,6 +21,10 @@ class Piece{
     public function setOrientation($orientation){
         $this->orientation = $orientation;
     }
+
+    public function afficher(){
+        return $type . $orientation;
+    }
 }
 
 ?>
