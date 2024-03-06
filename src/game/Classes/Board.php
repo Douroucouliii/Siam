@@ -19,15 +19,15 @@ class Board {
         //On crée un tableau de taille size*size
         $this->grid = array();
         for ($i = 0; $i < $this->size; $i++) {
-            $this->grid[$i] = array();
+            $this->grid[] = array();
             for ($j = 0; $j < $this->size; $j++) {
                 $this->grid[$i][$j] = null;
             }
         }
         //On place les rochers par défaut
-        placePiece(new Piece("Rocher", "N"), 2, 1);
-        placePiece(new Piece("Rocher", "N"), 2, 2);
-        placePiece(new Piece("Rocher", "N"), 2, 3);
+        $this->grid[2][1] = new Piece("Rocher", "N");
+        $this->grid[2][2] = new Piece("Rocher", "N");
+        $this->grid[2][3] = new Piece("Rocher", "N");
     }
 
     public function placePiece($piece, $x, $y) {
@@ -46,8 +46,30 @@ class Board {
         $this->grid[$x][$y] = null;
     }
 
+    public function updateBoard() {
+        //On met à jour le plateau
+    }
+
     public function getPieceAtPosition($x, $y){
         return $this->grid[$x][$y];
+    }
+
+    public function getSize(){
+        return $this->size;
+    }
+
+    public function printBoard(){
+        for ($i = 0; $i < $this->size; $i++) {
+            echo "<br>";
+            for ($j = 0; $j < $this->size; $j++) {
+                $piece = $this->grid[$i][$j];
+                if($piece != null){
+                    echo $piece->printPiece();
+                }else{
+                    echo "__________";
+                }
+            }
+        }
     }
 }
 

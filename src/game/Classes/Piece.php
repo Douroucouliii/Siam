@@ -1,5 +1,9 @@
 <?php
 
+#######################################
+####### DEFINITION D'UNE PIECE ########
+#######################################
+
 class Piece{
 
     private $type;
@@ -22,8 +26,8 @@ class Piece{
         $this->orientation = $orientation;
     }
 
-    public function afficher(){
-        return $type . $orientation;
+    public function printPiece() {
+        return $this->type . " " . $this->orientation;
     }
 }
 
