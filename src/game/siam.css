@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#hand1,
+#hand2 {
+    width: 400px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+    background-image: url('../../data/plateau.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(5, 80px);
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+}
